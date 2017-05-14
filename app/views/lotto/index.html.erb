@@ -1,0 +1,18 @@
+<h1>HEEHAM's Lotto Check</h1>
+
+<%= form_tag(action: :check) do |f| %>
+<p>
+  <div style="color: red">
+    <strong><%= notice %></strong>
+  </div>
+  <%= label :week, "회차 검색 : " %>
+  <%= text_field_tag :week, nil, size: 1, maxlength: 3, placeholder: "#{@lotto_draw_number}" %>
+  <%= submit_tag "확인" %>
+</p>
+<% end %>
+
+<p>
+  <%= "[ 이번 주 : #{@lotto_draw_number} 회차 ]" %> <br><br>
+  <%= "당첨번호 : #{@lotto_numbers}" %> <br>
+  <%= "보너스 번호 : #{@lotto_bonus}" %>
+</p>
